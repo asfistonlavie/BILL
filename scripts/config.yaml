@@ -1,0 +1,10 @@
+raw_dir: "0.RAW_DATA/"
+ref_dir: "REFERENCE_GENOMES/"
+res_dir: "RESULTS/P1/"
+log_dir: "LOGS/P1/"
+ben_dir: "BENCHMARKS/P1/"
+
+ref_file: "P1.fasta"
+trim: 1000
+#genome_size: 295052
+genome_size: 295179
