@@ -1,0 +1,10 @@
+raw_dir: "INPUT_DATA/"
+ref_dir: "REFERENCE_GENOMES/"
+res_dir: "RESULTS/"
+log_dir: "LOGS/P1/"
+ben_dir: "BENCHMARKS/P1/"
+
+ref_file: "KHV-J.fasta"
+trim: 1000
+genome_size: 295052
+#genome_size: 295179

@@ -43,7 +43,7 @@ rule seqkit_trim:
 	threads: 2
 	shell:
 		"""
-		seqkit seq -m {trim} {input.raw} > {output.trimed} 2> {log.out}
+		seqkit seq -m {trim} {input.raw} -o {output.trimed} 2> {log.out}
 		"""
 
 rule minimap2:
@@ -94,9 +94,9 @@ rule samtools_sort:
 
 rule samtools_flagstat:
 	input:
-		sorted=rules.samtools_sort.output
+		sorted=rules.minimap2.output
 	output:
-		stats=protected(RES_DIR + "{P}/{sample}/{sample}.trimed" + trim + ".mapped.sorted.flagstat")
+		stats=protected(RES_DIR + "{P}/{sample}/{sample}.trimed" + trim + ".flagstat")
 	log:
 		out=LOG_DIR + "SAMTOOLS/FLAGSTAT/{P}/{sample}.log"
 	benchmark:
@@ -165,5 +165,7 @@ rule sniffles:
 	threads: 4
 	shell:
 		"""
-		sniffles -t {threads} -m {input.sorted} -l 30 -s 10 -f 0.1 --genotype -v {output.vcf} 2> {log.out}
+		sniffles -t {threads} -i {input.sorted} --minsvlen 30 --minsupport 10 -v {output.vcf} 2> {log.out}
 		"""
+
+# -l 30 -s 10 -f 0.1 --genotype 
