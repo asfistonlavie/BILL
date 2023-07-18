@@ -1,0 +1,82 @@
+workdir: "/students/PROFS/soulier/bill/"
+configfile: "config/config.yaml"
+
+include: "rules/common.smk"
+include: "rules/preprocessing.smk"
+include: "rules/alignment.smk"
+include: "rules/variants_analysis.smk"
+include: "rules/stats.smk"
+
+rule all:
+	input:
+		# raw reads stats file (rule seq_stats_raw)
+		expand(
+			f"{config['res_dir']}/{{sample}}.seqstats",
+			sample=config['samples']
+		),
+		# trimed reads stats file (rule seq_stats_trimed)
+		expand(
+			f"{config['res_dir']}/{{sample}}.trimed{{trim}}.seqstats",
+			sample=config['samples'],
+			trim=config['trim']
+		),
+		# alignment flagstat graph (rule flagstat_plot)
+		expand(
+			f"{config['res_dir']}/{{group}}.trimed{{trim}}.flagstat.png",
+			group=config['group'],
+			trim=config['trim']
+		),
+		# bedgraph file (rule bedgraph)
+		expand(
+			f"{config['res_dir']}/{{sample}}.trimed{{trim}}.bedgraph",
+			sample=config['samples'],
+			trim=config['trim']
+		),
+		# pdf plot file (rule plot)
+		expand(
+			f"{config['res_dir']}/{{sample}}.trimed{{trim}}.pdf",
+			sample=config['samples'],
+			trim=config['trim']
+		),
+		# SV stats file (rule sv_stats)
+		expand(
+			f"{config['res_dir']}/{{sample}}.trimed{{trim}}.sv.vcf.stats",
+			sample=config['samples'],
+			trim=config['trim']
+		),
+		# merged vcf file (rule vcf_merge)
+		expand(
+			f"{config['res_dir']}/{{group}}.trimed{{trim}}.sv.filtered.merge.vcf",
+			group=config['group'],
+			trim=config['trim']
+		),
+		# SNP stats file (rule snp_stats)
+		expand(
+			f"{config['res_dir']}/{{sample}}.trimed{{trim}}.snp.vcf.stats",	
+			sample=config['samples'],
+			trim=config['trim']
+		),
+		# sample assembly (rule assembly)
+		expand(
+			f"{config['res_dir']}/{{sample}}.trimed{{trim}}.fasta",
+			sample=config['samples'],
+			trim=config['trim']
+		)
+
+rule help:
+	run:
+		print("")
+		print("")
+		print("Pipeline d'analyse de l'UE pédagogique BILL v2.0")
+		print("Usage: snakemake --cores [INT] [regle] [options]")
+		print("")
+		print("")
+		print("Options recommandees :")
+		print("\t-p\taffiche les commandes executees par les regles")
+		print("\t-n\tsimule l'execution des regles pipeline")
+		print("\t-k\tpoursuit l'execution des regles independantes si l'une echoue")
+		print("")
+		print("")
+		print("Regle disponible :")
+		print("\tall\t\tgenere le")
+		print("\tbedgraph\tgenere les fichiers bedgraph pour les samples selectionnes")

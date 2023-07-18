@@ -1,0 +1,40 @@
+#######################
+### Required values ###
+#######################
+
+input_dir: 'ressources/inputs/P50'
+ref_dir: 'ressources/references'
+ref_name: 'P1.fasta'
+
+########################
+### Adaptable values ###
+########################
+
+res_dir: 'results/P50/P1'
+samples: ['P50-1','P50-2','P50-3','P50-4','P50-5','P50-6','P50-7','P50-8','P50-9','P50-10']
+trim: 1000
+group: 'P50'
+
+######################
+### Default values ###
+######################
+
+seqkit_stats_options: '-a'
+seqkit_seq_options: '-g'
+minimap2_options: '--MD -ax map-ont'
+samtools_flagstat_options: ''
+python_flagstat_plot_options: ''
+samtools_view_options: '-bhS -F 4'
+samtools_sort_options: '-l 9'
+samtools_index_options: ''
+bamCoverage_options: '--normalizeUsing RPGC -of "bedgraph"'
+plotCoverage_options: '--smartLabels --plotFileFormat pdf'
+sniffles_options: '--minsvlen 10 --minsupport 10'
+bcftools_stats_options: ''
+bcftools_filter_options: '-e "AF<0.1"'
+bgzip_options: ''
+tabix_options: ''
+bcftools_merge_options: ''
+medaka_consensus_options: ''
+medaka_snp_options: ''
+medaka_stitch_options: ''
