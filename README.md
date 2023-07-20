@@ -1,6 +1,6 @@
 # BioInformatics Learning Lab - BILL
 
-<img src="logo_bill.jpg" alt="Logo BILL" title="Logo BILL" align="left" width=250 height=250/>
+<img src="img/logo_bill.jpg" alt="Logo BILL" title="Logo BILL" align="left" width=250 height=250/>
 
 ## Variant calling snakemake pipeline designed for teaching
 
@@ -8,7 +8,7 @@ The BioInformatics Learning Lab (BILL) is a teaching unit of the Master of Bioin
 
 This pipeline is used to generate analysis data. It begins by trimming the reads files by removing reads with a size less than 1000 bp. It then proceeds to align the reads against the genomic reference of the virus. It process the alignment by removing unaligned reads and converting them to sorted binary format. It hen does a variant calling step and filters the resulting variants. It finally merges all variants files in one _VCF_ file. Some statistical commands appear throughout the pipeline to check the quality of data or results.
 
-<img src="pipeline.png" alt="Pipeline" title="Pipeline"/>
+<img src="img/pipeline.png" alt="Pipeline" title="Pipeline"/>
 
 - [Getting Started](#getting-started)
     - [Dependencies](#dependencies)
