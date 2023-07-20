@@ -15,6 +15,7 @@ This pipeline is used to generate analysis data. It begins by trimming the reads
 - [Getting Started](#getting-started)
     - [Dependencies](#dependencies)
     - [How to install it](#install)
+    - [How to test it](#how-to-test-it)
     - [How to use it](#how-to-use-it)
 - [Authors](#authors)
 - [Acknowledgements](#acknowledgement)
@@ -32,7 +33,7 @@ This pipeline is used to generate analysis data. It begins by trimming the reads
 - tabix v1.11
 - bcftools v1.11
 
-### Install
+### How to install it
 
 Clone the repository wherever you want on your local:
 
@@ -47,6 +48,9 @@ cp /path/to/your/reads/*.fastq.gz bill/ressources/inputs/
 cp /path/to/your/references/*.fasta bill/ressources/references/
 
 ```
+### How to test it
+
+
 
 ### How to use it
 
