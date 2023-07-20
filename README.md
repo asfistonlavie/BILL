@@ -1,7 +1,8 @@
 # BioInformatics Learning Lab 
-## Variant calling snakemake pipeline designed for teaching
 
-<img src="logo_bill.jpeg" alt="Logo BILL" title="Logo BILL" align="right"/>
+<img src="logo_bill.svg" alt="Logo BILL" title="Logo BILL" align="left" width=150 height=150/>
+
+## Variant calling snakemake pipeline designed for teaching
 
 The BioInformatics Learning Lab (BILL) is a teaching unit of the Master of Bioinformatics of the University of Montpellier. The students participate in a research project where they analyze Structural Variants (SV) and Small Nucleotide Variants (SNV) due to heat shock (cold at 15° and hot at 28°) on cultures of Cyprinid Herpesvirus 3 in carp brain cells. They do DNA extraction, sequencing, data analysis and interpretation of results. 
 
