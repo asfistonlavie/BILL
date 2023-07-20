@@ -78,4 +78,8 @@ You can override each option in the configuration file- by adding the parameter 
 
 ## Acknowledgement
 
-[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)]() [![Website shields.io](https://img.shields.io/website-up-down-green-red/http/shields.io.svg)](https://informatique-fds.edu.umontpellier.fr/etudiants/masters-transdisciplinaires/master-bioinformatique/bill-bioinformatics-learning-lab/) [![Wiki](https://img.shields.io/badge/Wiki-yes-green.svg)](https://gitlab.com/souliera/bill/-/wikis/BioInformatics-Learning-Lab-Wiki) [![GPLv3 license](https://img.shields.io/badge/License-GPLv3-blue.svg)](http://perso.crans.org/besson/LICENSE.html) [![GitLab release](https://badgen.net/gitlab/releases/souliera/bill/)](https://gitlab.com/souliera/bill/-/releases) [![Gitlab contributors](https://img.shields.io/gitlab/contributors/souliera/bill.svg)](https://gitlab.com/souliera/bill/-/project_members)
+[![Website](https://img.shields.io/website?up_message=up&up_color=green&down_message=down&down_color=red&url=https://informatique-fds.edu.umontpellier.fr/etudiants/masters-transdisciplinaires/master-bioinformatique/bill-bioinformatics-learning-lab/)](https://informatique-fds.edu.umontpellier.fr/etudiants/masters-transdisciplinaires/master-bioinformatique/bill-bioinformatics-learning-lab/)
+![GitHub](https://img.shields.io/github/license/asfistonlavie/BILL)
+![GitHub contributors](https://img.shields.io/github/contributors/asfistonlavie/BILL)
+[![Github release](https://badgen.net/github/releases/asfistonlavie/BILL)](https://github.com/asfistonlavie/BILL/releases)
+[![Static Badge](https://img.shields.io/badge/wiki-yes-green)](https://github.com/asfistonlavie/BILL/wiki)
