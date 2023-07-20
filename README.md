@@ -1,4 +1,5 @@
-# BioInformatics Learning Lab Snakemake pipeline
+# BioInformatics Learning Lab 
+## Variant calling snakemake pipeline designed for teaching
 
 <img src="pipeline.png" alt="Pipeline" title="Pipeline"/>
 
