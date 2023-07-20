@@ -1,4 +1,4 @@
-# BioInformatics Learning Lab 
+# BioInformatics Learning Lab - BILL
 
 <img src="logo_bill.svg" alt="Logo BILL" title="Logo BILL" align="left" width=150 height=150/>
 
