@@ -1,6 +1,6 @@
 # BioInformatics Learning Lab - BILL
 
-<img src="logo_bill.svg" alt="Logo BILL" title="Logo BILL" align="left" width=150 height=150/>
+<img src="bill_logo.svg" alt="Logo BILL" title="Logo BILL" align="left" width=150 height=150/>
 
 ## Variant calling snakemake pipeline designed for teaching
 
