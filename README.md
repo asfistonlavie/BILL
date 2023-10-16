@@ -8,7 +8,7 @@ The BioInformatics Learning Lab (BILL) is a teaching unit of the Master of Bioin
 
 They do DNA extraction, sequencing, data analysis and interpretation of results. 
 
-This pipeline is used to generate analysis data. It begins by trimming the reads files by removing reads with a size less than 1000 bp. It then proceeds to align the reads against the genomic reference of the virus. It process the alignment by removing unaligned reads and converting them to sorted binary format. It then does a variant calling step and filters the resulting variants. It finally merges all variants files in one _VCF_ file. Some statistical commands appear throughout the pipeline to check the quality of data or results.
+This pipeline is used to generate analysis data. It begins by trimming the reads files by removing reads with a size less than 1 000 bp. It then proceeds to align the reads against the genomic reference of the virus. It process the alignment by removing unaligned reads and converting them to sorted binary format. It then does a variant calling step and filters the resulting variants. It finally merges all variants files in one _VCF_ file. Some statistical commands appear throughout the pipeline to check the quality of data or results.
 
 <img src="img/pipeline.png" alt="Pipeline" title="Pipeline"/>
 
