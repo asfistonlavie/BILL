@@ -4,11 +4,11 @@
 
 ## Variant calling pipeline designed for teaching
 
-The BioInformatics Learning Lab (BILL) is a teaching unit of the Master of Bioinformatics of the University of Montpellier. The students participate in a research project where they analyze Structural Variants (SV) and Small Nucleotide Variants (SNV).
+The BioInformatics Learning Lab (BILL) is a teaching unit of the Master of Bioinformatics of the University of Montpellier. The students participate in a research project where they analyze Structural Variants (SVs) and Small Nucleotide Variants (SNVs).
 
 They do DNA extraction, sequencing, data analysis and interpretation of results. 
 
-This pipeline is used to generate analysis data. It begins by trimming the reads files by removing reads with a size less than 1000 bp. It then proceeds to align the reads against the genomic reference of the virus. It process the alignment by removing unaligned reads and converting them to sorted binary format. It hen does a variant calling step and filters the resulting variants. It finally merges all variants files in one _VCF_ file. Some statistical commands appear throughout the pipeline to check the quality of data or results.
+This pipeline is used to generate analysis data. It begins by trimming the reads files by removing reads with a size less than 1000 bp. It then proceeds to align the reads against the genomic reference of the virus. It process the alignment by removing unaligned reads and converting them to sorted binary format. It then does a variant calling step and filters the resulting variants. It finally merges all variants files in one _VCF_ file. Some statistical commands appear throughout the pipeline to check the quality of data or results.
 
 <img src="img/pipeline.png" alt="Pipeline" title="Pipeline"/>
 
@@ -72,8 +72,8 @@ You can override each option in the configuration file- by adding the parameter 
 
 ## Authors
 
-- Arnaud Soulier --> [Gitlab profil](https://gitlab.com/souliera)<br>
-- Catherine Breton --> [Gitlab profil](https://gitlab.com/CathyBreton)<br>
+- Arnaud Soulier --> [Github profil](https://github.com/souliera)<br>
+- Catherine Breton --> [Github profil](https://github.com/CathyBreton)<br>
 - Anna-Sophie Fiston-Lavier --> [Github profil](https://github.com/asfistonlavie)
 
 ## Acknowledgement
