@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+- family-names: "Soulier"
+  given-names: "Arnaud"
+  orcid: "https://orcid.org/0000-0000-0000-0000"
+- family-names: "Breton"
+  given-names: "Catherine"
+  orcid: "https://orcid.org/0000-0002-3389-1861"
+- family-names: "Arnoux"
+  given-names: "Alizée"
+  orcid: "https://orcid.org/0000-0000-0000-0000"
+- family-names: "Cherif"
+  given-names: "Emira"
+  orcid: "https://orcid.org/0000-0002-7266-5365"
+- family-names: "Fiston-Lavier"
+  given-names: "Anna-Sophie"
+  orcid: "https://orcid.org/0000-0002-7306-6532"
+title: "Variant calling pipeline designed for the Bioinformatics Learning Lab"
+version: 1.0.0
+doi: 10.5281/zenodo.1234
+date-released: 2023-10-19
+url: "https://github.com/asfistonlavie/BILL"
