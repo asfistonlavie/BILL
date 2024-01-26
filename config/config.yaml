@@ -2,18 +2,18 @@
 ### Required values ###
 #######################
 
-input_dir: 'ressources/inputs/P50'
+input_dir: 'ressources/inputs/P15'
 ref_dir: 'ressources/references'
-ref_name: 'P1.fasta'
+ref_name: 'KHV-U_trunc.fasta'
 
 ########################
 ### Adaptable values ###
 ########################
 
-res_dir: 'results/P50/P1'
-samples: ['P50-1','P50-2','P50-3','P50-4','P50-5','P50-6','P50-7','P50-8','P50-9','P50-10']
+res_dir: 'results/P15-on-KHVU_trunc'
+samples: ['P15-1','P15-2','P15-3','P15-4','P15-5','P15-6','P15-7','P15-8','P15-9','P15-10']
 trim: 1000
-group: 'P50'
+group: 'P15'
 
 ######################
 ### Default values ###
@@ -30,7 +30,12 @@ samtools_index_options: ''
 bamCoverage_options: '--normalizeUsing RPGC -of "bedgraph"'
 plotCoverage_options: '--smartLabels --plotFileFormat pdf'
 sniffles_options: '--minsvlen 10 --minsupport 10'
+cutesv_options: '--min_size 10 --min_support 10 --genotype'
+svim_options: '--min_sv_size 10'
+nanovar_options: '--minlen 10 --mincov 10'
+nanosv_options: ''
 bcftools_stats_options: ''
+combisv_options: ''
 bcftools_filter_options: '-e "AF<0.1"'
 bgzip_options: ''
 tabix_options: ''

@@ -9,6 +9,8 @@ rule seqkit_stats_raw:
 		stats=protected(f"{{path_res}}/{{sample}}.seqstats")
 	log:
 		f"{{path_res}}/logs/seqkit/stats/{{sample}}.log"
+	benchmark:
+		f"{{path_res}}/benchmarks/seqkit/stats/{{sample}}.txt"
 	threads: 2
 	params:
 		config['seqkit_stats_options']
@@ -29,6 +31,8 @@ rule seqkit_stats_trimed:
 		stats=protected(f"{{path_res}}/{{sample}}.trimed{{trim}}.seqstats")
 	log:
 		f"{{path_res}}/logs/seqkit/stats/{{sample}}.trimed{{trim}}.log"
+	benchmark:
+		f"{{path_res}}/benchmarks/seqkit/stats/{{sample}}.trimed{{trim}}.txt"
 	threads: 2
 	params:
 		config['seqkit_stats_options']
@@ -55,6 +59,8 @@ rule samtools_flagstat:
 		flagstat=protected(f"{{path_res}}/{{sample}}.trimed{{trim}}.flagstat")
 	log:
 		f"{{path_res}}/logs/samtools/flagstat/{{sample}}.trimed{{trim}}.log"
+	benchmark:
+		f"{{path_res}}/benchmarks/samtools/flagstat/{{sample}}.trimed{{trim}}.txt"
 	threads: 2
 	params:
 		config['samtools_flagstat_options']
@@ -76,6 +82,8 @@ rule plot_flagstat:
 		png=f"{{path_res}}/{{group}}.trimed{{trim}}.flagstat.png"
 	log:
 		f"{{path_res}}/logs/python/flagstat/{{group}}.trimed{{trim}}.log"
+	benchmark:
+		f"{{path_res}}/benchmarks/python/flagstat/{{group}}.trimed{{trim}}.txt"
 	threads: 2
 	params:
 		config['python_flagstat_plot_options']
@@ -103,11 +111,13 @@ rule bamCoverage:
 		bedgraph=protected(f"{{path_res}}/{{sample}}.trimed{{trim}}.bedgraph")
 	log:
 		f"{{path_res}}/logs/deeptools/bamCoverage/{{sample}}.trimed{{trim}}.log"
+	benchmark:
+		f"{{path_res}}/benchmarks/bamCoverage/{{sample}}.trimed{{trim}}.txt"
 	threads: 4
 	params:
 		config['bamCoverage_options']
 	shell:
-		"bamCoverage -p {threads} --effectiveGenomeSize `grep -v \"^>\" {input.ref} | tr -d \"\n\" | wc -c` {params} -b {input.sorted} -o {output} 2> {log}"
+		"bamCoverage -p {threads} --effectiveGenomeSize `grep -v \"^>\" {input.ref} | tr -d \"\r\n\" | wc -c` {params} -b {input.sorted} -o {output} 2> {log}"
 
 rule bedgraph:
 	input:
@@ -124,6 +134,8 @@ rule plotCoverage:
 		plot=protected(f"{{path_res}}/{{sample}}.trimed{{trim}}.pdf")
 	log:
 		f"{{path_res}}/logs/deeptools/plotCoverage/{{sample}}.trimed{{trim}}.log"
+	benchmark:
+		f"{{path_res}}/benchmarks/plotCoverage/{{sample}}.trimed{{trim}}.txt"
 	threads: 8
 	params:
 		config['plotCoverage_options']
@@ -138,23 +150,113 @@ rule plot:
 			sample=config['samples'],
 			trim=config['trim'])
 
-rule bcftools_stats_sv:
+rule bcftools_stats_sv_sniffles:
 	input:
 		vcf=rules.sniffles.output
 	output:
-		stats=protected(f"{{path_res}}/{{sample}}.trimed{{trim}}.sv.vcf.stats")
+		stats=protected(f"{{path_res}}/{{sample}}.trimed{{trim}}.sv_sniffles.vcf.stats")
 	log:
-		f"{{path_res}}/logs/bcftools/stats/{{sample}}.trimed{{trim}}.log"
+		f"{{path_res}}/logs/bcftools/stats/{{sample}}.trimed{{trim}}.sv_sniffles.log"
+	benchmark:
+		f"{{path_res}}/benchmarks/bcftools/stats/{{sample}}.trimed{{trim}}.sv_sniffles.txt"
 	threads: 2
 	params:
 		config['bcftools_stats_options']
 	shell:
 		"bcftools stats --threads {threads} {params} {input} > {output} 2> {log}"
 
-rule sv_stats:
+rule sv_stats_sniffles:
 	input:
 		expand(
-			f"{config['res_dir']}/{{sample}}.trimed{{trim}}.sv.vcf.stats",
+			f"{config['res_dir']}/{{sample}}.trimed{{trim}}.sv_sniffles.vcf.stats",
+			sample=config['samples'],
+			trim=config['trim'])
+
+rule bcftools_stats_sv_cutesv:
+	input:
+		vcf=rules.cutesv.output
+	output:
+		stats=protected(f"{{path_res}}/{{sample}}.trimed{{trim}}.sv_cutesv.vcf.stats")
+	log:
+		f"{{path_res}}/logs/bcftools/stats/{{sample}}.trimed{{trim}}.sv_cutesv.log"
+	benchmark:
+		f"{{path_res}}/benchmarks/bcftools/stats/{{sample}}.trimed{{trim}}.sv_cutesv.txt"
+	threads: 2
+	params:
+		config['bcftools_stats_options']
+	shell:
+		"bcftools stats --threads {threads} {params} {input} > {output} 2> {log}"
+
+rule sv_stats_cutesv:
+	input:
+		expand(
+			f"{config['res_dir']}/{{sample}}.trimed{{trim}}.sv_cutesv.vcf.stats",
+			sample=config['samples'],
+			trim=config['trim'])
+
+rule bcftools_stats_sv_nanosv:
+	input:
+		vcf=rules.nanosv.output
+	output:
+		stats=protected(f"{{path_res}}/{{sample}}.trimed{{trim}}.sv_nanosv.vcf.stats")
+	log:
+		f"{{path_res}}/logs/bcftools/stats/{{sample}}.trimed{{trim}}.sv_nanosv.log"
+	benchmark:
+		f"{{path_res}}/benchmarks/bcftools/stats/{{sample}}.trimed{{trim}}.sv_nanosv.txt"
+	threads: 2
+	params:
+		config['bcftools_stats_options']
+	shell:
+		"bcftools stats --threads {threads} {params} {input} > {output} 2> {log}"
+
+rule sv_stats_nanosv:
+	input:
+		expand(
+			f"{config['res_dir']}/{{sample}}.trimed{{trim}}.sv_nanosv.vcf.stats",
+			sample=config['samples'],
+			trim=config['trim'])
+
+rule bcftools_stats_sv_svim:
+	input:
+		vcf=rules.svim.output
+	output:
+		stats=protected(f"{{path_res}}/{{sample}}.trimed{{trim}}.sv_svim.vcf.stats")
+	log:
+		f"{{path_res}}/logs/bcftools/stats/{{sample}}.trimed{{trim}}.sv_svim.log"
+	benchmark:
+		f"{{path_res}}/benchmarks/bcftools/stats/{{sample}}.trimed{{trim}}.sv_svim.txt"
+	threads: 2
+	params:
+		config['bcftools_stats_options']
+	shell:
+		"bcftools stats --threads {threads} {params} {input} > {output} 2> {log}"
+
+rule sv_stats_svim:
+	input:
+		expand(
+			f"{config['res_dir']}/{{sample}}.trimed{{trim}}.sv_svim.vcf.stats",
+			sample=config['samples'],
+			trim=config['trim'])
+
+rule bcftools_stats_sv_nanovar:
+	input:
+		vcf=rules.nanovar.output
+	output:
+		stats=protected(f"{{path_res}}/{{sample}}.trimed{{trim}}.sv_nanovar.vcf.stats")
+	log:
+		f"{{path_res}}/logs/bcftools/stats/{{sample}}.trimed{{trim}}.sv_nanovar.log"
+	benchmark:
+		f"{{path_res}}/benchmarks/nanovar/stats/{{sample}}.trimed{{trim}}.sv_nanovar.txt"
+	threads: 2
+	params:
+		config['bcftools_stats_options']
+	shell:
+		"bcftools stats --threads {threads} {params} {input} > {output} 2> {log}"
+
+rule sv_stats_nanovar:
+	input:
+		expand(
+			f"{config['res_dir']}/{{sample}}.trimed{{trim}}.sv_nanovar.vcf.stats",
 			sample=config['samples'],
 			trim=config['trim'])
 
@@ -164,7 +266,9 @@ rule bcftools_stats_snp:
 	output:
 		stats=protected(f"{{path_res}}/{{sample}}.trimed{{trim}}.snp.vcf.stats")
 	log:
-		f"{{path_res}}/logs/bcftools/stats/{{sample}}.trimed{{trim}}.log"
+		f"{{path_res}}/logs/bcftools/stats/{{sample}}.trimed{{trim}}.snp.log"
+	benchmark:
+		f"{{path_res}}/benchmarks/bcftools/stats/{{sample}}.trimed{{trim}}.snp.txt"
 	threads: 2
 	params:
 		config['bcftools_stats_options']

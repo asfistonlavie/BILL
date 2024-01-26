@@ -5,6 +5,8 @@ rule seqkit_seq:
 		trimed=temp(f"{{path_res}}/{{sample}}.trimed{{trim}}.fastq.gz")
 	log:
 		f"{{path_res}}/logs/seqkit/seq/{{sample}}.trimed{{trim}}.log"
+	benchmark:
+		f"{{path_res}}/benchmarks/seqkit/seq/{{sample}}.trimed{{trim}}.txt"
 	threads: 2
 	params:
 		config['seqkit_seq_options']

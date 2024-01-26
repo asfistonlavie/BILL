@@ -20,10 +20,10 @@ rule all:
 			sample=config['samples'],
 			trim=config['trim']
 		),
-		# alignment flagstat graph (rule flagstat_plot)
+		# alignment flagstat graph (rule flagstat_plot) #fix: rule flagstat
 		expand(
-			f"{config['res_dir']}/{{group}}.trimed{{trim}}.flagstat.png",
-			group=config['group'],
+			f"{config['res_dir']}/{{samples}}.trimed{{trim}}.flagstat",
+			samples=config['samples'],
 			trim=config['trim']
 		),
 		# bedgraph file (rule bedgraph)
@@ -38,18 +38,36 @@ rule all:
 			sample=config['samples'],
 			trim=config['trim']
 		),
-		# SV stats file (rule sv_stats)
+		# SV Sniffles stats file (rule sv_stats_sniffles)
 		expand(
-			f"{config['res_dir']}/{{sample}}.trimed{{trim}}.sv.vcf.stats",
+			f"{config['res_dir']}/{{sample}}.trimed{{trim}}.sv_sniffles.vcf.stats",
 			sample=config['samples'],
 			trim=config['trim']
 		),
-		# merged vcf file (rule vcf_merge)
-		expand(
-			f"{config['res_dir']}/{{group}}.trimed{{trim}}.sv.filtered.merge.vcf",
-			group=config['group'],
-			trim=config['trim']
-		),
+		# SV cuteSV stats file (rule sv_stats_cutesv)
+		#expand(
+		#	f"{config['res_dir']}/{{sample}}.trimed{{trim}}.sv_cutesv.vcf.stats",
+		#	sample=config['samples'],
+		#	trim=config['trim']
+		#),
+		# SV SVIM stats file (rule sv_stats_svim)
+		#expand(
+		#	f"{config['res_dir']}/{{sample}}.trimed{{trim}}.sv_svim.vcf.stats",
+		#	sample=config['samples'],
+		#	trim=config['trim']
+		#),
+		# SV nanovar stats file (rule sv_stats_nanovar)
+		#expand(
+		#	f"{config['res_dir']}/{{sample}}.trimed{{trim}}.sv_nanovar.vcf.stats",
+		#	sample=config['samples'],
+		#	trim=config['trim']
+		#),
+		# SV NanoSV stats file (rule sv_stats_nanosv)
+		#expand(
+		#	f"{config['res_dir']}/{{sample}}.trimed{{trim}}.sv_nanosv.vcf.stats",
+		#	sample=config['samples'],
+		#	trim=config['trim']
+		#),
 		# SNP stats file (rule snp_stats)
 		expand(
 			f"{config['res_dir']}/{{sample}}.trimed{{trim}}.snp.vcf.stats",	
@@ -57,11 +75,11 @@ rule all:
 			trim=config['trim']
 		),
 		# sample assembly (rule assembly)
-		expand(
-			f"{config['res_dir']}/{{sample}}.trimed{{trim}}.fasta",
-			sample=config['samples'],
-			trim=config['trim']
-		)
+		#expand(
+		#	f"{config['res_dir']}/{{sample}}.trimed{{trim}}.fasta",
+		#	sample=config['samples'],
+		#	trim=config['trim']
+		#)
 
 rule help:
 	run:

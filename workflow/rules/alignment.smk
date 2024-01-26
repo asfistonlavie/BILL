@@ -10,6 +10,8 @@ rule minimap2:
 		sam=temp(f"{{path_res}}/{{sample}}.trimed{{trim}}.sam")
 	log:
 		f"{{path_res}}/logs/minimap/{{sample}}.trimed{{trim}}.log"
+	benchmark:
+		f"{{path_res}}/benchmarks/minimap/{{sample}}.trimed{{trim}}.txt"
 	threads: 4
 	params:
 		config['minimap2_options']
@@ -34,6 +36,8 @@ rule samtools_view:
 		aligned=temp(f"{{path_res}}/{{sample}}.trimed{{trim}}.aligned.bam")
 	log:
 		f"{{path_res}}/logs/samtools/view/{{sample}}.trimed{{trim}}.log"
+	benchmark:
+		f"{{path_res}}/benchmarks/samtools/view/{{sample}}.trimed{{trim}}.txt"
 	threads: 2
 	params:
 		config['samtools_view_options']
@@ -54,6 +58,8 @@ rule samtools_sort:
 		sorted=f"{{path_res}}/{{sample}}.trimed{{trim}}.aligned.sorted.bam"
 	log:
 		f"{{path_res}}/logs/samtools/sort/{{sample}}.trimed{{trim}}.log"
+	benchmark:
+		f"{{path_res}}/benchmarks/samtools/sort/{{sample}}.trimed{{trim}}.txt"
 	threads: 2
 	params:
 		config['samtools_sort_options']
@@ -74,6 +80,8 @@ rule samtools_index:
 		index=f"{{path_res}}/{{sample}}.trimed{{trim}}.aligned.sorted.bam.bai"
 	log:
 		f"{{path_res}}/logs/samtools/index/{{sample}}.trimed{{trim}}.log"
+	benchmark:
+		f"{{path_res}}/benchmarks/samtools/index/{{sample}}.trimed{{trim}}.txt"
 	threads: 2
 	params:
 		config['samtools_index_options']
@@ -97,6 +105,8 @@ rule medaka_stitch:
 		fasta=f"{{path_res}}/{{sample}}.trimed{{trim}}.fasta"
 	log:
 		f"{{path_res}}/logs/medaka/stitch/{{sample}}.trimed{{trim}}.log"
+	benchmark:
+		f"{{path_res}}/benchmarks/medaka/stitch/{{sample}}.trimed{{trim}}.txt"
 	threads: 2
 	params:
 		config['medaka_stitch_options'],

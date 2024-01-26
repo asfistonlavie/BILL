@@ -78,3 +78,38 @@ rule vcf_merge:
 			f"{config['res_dir']}/{{group}}.trimed{{trim}}.sv.filtered.merge.vcf",
 			group=config['group'],
 			trim=config['trim'])
+
+rule combisv:
+	input:
+		sniffles=rules.sniffles.output,
+		cutesv=rules.cutesv.output,
+		nanosv=rules.nanosv.output,
+		svim=rules.svim.output
+	output:
+		vcf=f"{{path_res}}/{{sample}}.trimed{{trim}}.combisv.vcf",
+		sniffles=f"{{path_res}}/{{sample}}.trimed{{trim}}.combisv_sniffles.vcf",
+		cutesv=f"{{path_res}}/{{sample}}.trimed{{trim}}.combisv_cutesv.vcf",
+		nanosv=f"{{path_res}}/{{sample}}.trimed{{trim}}.combisv_nanosv.vcf",
+		svim=f"{{path_res}}/{{sample}}.trimed{{trim}}.combisv_svim.vcf"
+	log:
+		f"{{path_res}}/logs/combisv/{{sample}}.trimed{{trim}}.log"
+	threads: 1
+	params:
+		config['combisv_options']
+	shell:
+		"""
+		perl combiSV2.2.pl -sniffles {input.sniffles} -cutesv {input.cutesv} -svim {input.svim} -nanosv {input.nanosv} -o {wildcards.sample}.trimed{wildcards.trim}.combisv.vcf 2> {log}
+		mv {wildcards.sample}.trimed{wildcards.trim}.combisv.vcf {output.vcf}
+		mv Sniffles_{wildcards.sample}.trimed{wildcards.trim}.combisv.vcf {output.sniffles}
+		mv cuteSV_{wildcards.sample}.trimed{wildcards.trim}.combisv.vcf {output.cutesv}
+		mv SVIM_{wildcards.sample}.trimed{wildcards.trim}.combisv.vcf {output.svim}
+		mv NanoSV_{wildcards.sample}.trimed{wildcards.trim}.combisv.vcf {output.nanosv}
+		rm simplified_{wildcards.sample}.trimed{wildcards.trim}.combisv.vcf
+		"""
+
+rule vcf_combisv:
+	input:
+		expand(
+			f"{config['res_dir']}/{{sample}}.trimed{{trim}}.combisv.vcf",
+			sample=config['samples'],
+			trim=config['trim'])
