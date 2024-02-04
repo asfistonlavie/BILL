@@ -79,6 +79,8 @@ Zenodo. https://doi.org/10.5281/zenodo.10020027
 
 
 ## Acknowledgement
+ 
+We would like to thank the people involved in the BILL project, Jean-Christophe Avarre, Anne-Sophie Gosselin-Grenet and Marie-Ka Tilak, as well as all the students who took part in the project. 
 
 [![Website](https://img.shields.io/website?up_message=up&up_color=green&down_message=down&down_color=red&url=https://informatique-fds.edu.umontpellier.fr/etudiants/masters-transdisciplinaires/master-bioinformatique/bill-bioinformatics-learning-lab/)](https://informatique-fds.edu.umontpellier.fr/etudiants/masters-transdisciplinaires/master-bioinformatique/bill-bioinformatics-learning-lab/)
 ![GitHub](https://img.shields.io/github/license/asfistonlavie/BILL)
