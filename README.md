@@ -68,11 +68,19 @@ snakemake --cores <nb_core_max> <file_type_name>
 ```
 You can override each option in the configuration file- by adding the parameter `--config <option_name>=<option_value>` to the snakemake command.
 
+## How to cite the pipeline
+
+Variant calling pipeline designed for the Bioinformatics Learning Lab (BILL: release_2023.1)
+A Soulier, A Arnoux, C Breton, E Cherif, AS Fiston-Lavier
+Zenodo. https://doi.org/10.5281/zenodo.10020027
+
 ## Authors
 
-- Arnaud Soulier --> [Github profil](https://github.com/souliera)<br>
-- Catherine Breton --> [Github profil](https://github.com/CathyBreton)<br>
-- Anna-Sophie Fiston-Lavier --> [Github profil](https://github.com/asfistonlavie)
+- Arnaud Soulier [Github profil](https://github.com/souliera)
+- Catherine Breton [Github profil](https://github.com/CathyBreton)
+- Emira Cherif [Github profil](https://github.com/emiracherif)
+- Anna-Sophie Fiston-Lavier [Github profil](https://github.com/asfistonlavie)
+
 
 ## Acknowledgement
 
