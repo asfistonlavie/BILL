@@ -15,7 +15,6 @@ This pipeline starts by trimming the read files by removing reads smaller than 1
 - [Getting Started](#getting-started)
     - [Dependencies](#dependencies)
     - [How to install it](#install)
-    - [How to test it](#how-to-test-it)
     - [How to use it](#how-to-use-it)
 - [Authors](#authors)
 - [Acknowledgements](#acknowledgement)
@@ -48,9 +47,6 @@ cp </path/to/your/reads/*.fastq.gz> bill/resources/inputs/
 cp </path/to/your/references/*.fasta> bill/resources/references/
 
 ```
-### How to test it
-
-
 
 ### How to use it
 
