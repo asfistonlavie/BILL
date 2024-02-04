@@ -4,13 +4,13 @@
 
 ## Variant calling pipeline designed for teaching
 
-The BioInformatics Learning Lab (BILL) is a teaching unit of the Master of Bioinformatics of the University of Montpellier. The students participate in a research project where they analyze Structural Variants (SVs) and Small Nucleotide Variants (SNVs).
+The Bioinformatics Learning Lab (BILL) is a teaching unit of the Master of Bioinformatics of the University of Montpellier. Students take part in a research project analysing structural variants (SVs) and small nucleotide variants (SNVs).
 
-They do DNA extraction, sequencing, data analysis and interpretation of results. 
+They perform DNA extraction, sequencing, data analysis and interpretation of the results. 
 
-This pipeline is used to generate analysis data. It begins by trimming the reads files by removing reads with a size less than 1 000 bp. It then proceeds to align the reads against the genomic reference of the virus. It process the alignment by removing unaligned reads and converting them to sorted binary format. It then does a variant calling step and filters the resulting variants. It finally merges all variants files in one _VCF_ file. Some statistical commands appear throughout the pipeline to check the quality of data or results.
+This pipeline starts by trimming the read files by removing reads smaller than 1,000 bp. It then proceeds to align the reads against the virus genomic reference. It processes the alignment by removing unaligned reads and converting them to a sorted binary format. It then performs a variant calling step and filters the resulting variants. Finally, it merges all variant files into a _VCF_ file. Some statistical commands appear throughout the pipeline to check the quality of the data or results.
 
-<img src="img/pipeline.png" alt="Pipeline" title="Pipeline"/>
+<img src="img/pipeline2.png" alt="Pipeline" title="Pipeline"/>
 
 - [Getting Started](#getting-started)
     - [Dependencies](#dependencies)
