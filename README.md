@@ -38,14 +38,14 @@ This pipeline starts by trimming the read files by removing reads smaller than 1
 Clone the repository wherever you want on your local:
 
 ```
-git clone git@gitlab.com:souliera/bill.git # by SSH 
-git clone https://gitlab.com/souliera/bill.git # by HTTPS
+git clone git@gitlab.com:asfistonlavie/bill.git # by SSH 
+git clone https://gitlab.com/asfistonlavie/bill.git # by HTTPS
 ```
-Copy or move all your input data (reads and genomic references) to the `resources/` folder (respectively `ressources/inputs/` and `ressources/references`).
+Copy or move all your input data (reads and genomic references) to the `resources/` folder (respectively `resources/inputs/` and `resources/references`).
 ```
-cp /path/to/your/reads/*.fastq bill/ressources/inputs/
-cp /path/to/your/reads/*.fastq.gz bill/ressources/inputs/
-cp /path/to/your/references/*.fasta bill/ressources/references/
+cp </path/to/your/reads/*.fastq> bill/resources/inputs/
+cp </path/to/your/reads/*.fastq.gz> bill/resources/inputs/
+cp </path/to/your/references/*.fasta> bill/resources/references/
 
 ```
 ### How to test it
@@ -54,7 +54,7 @@ cp /path/to/your/references/*.fasta bill/ressources/references/
 
 ### How to use it
 
-There is three ways to use this pipeline: by file name, by file type or all the pipeline. The main command to run all the pipeline is `snakemake --cores <nb_core_max>`.
+There are three ways to use this pipeline: (1) by file name, (2) by file type, or (3) the whole pipeline. The main command to run all pipeline is `snakemake --cores <nb_core_max>`.
 
 If you just want a specific file, run:
 ```
@@ -66,8 +66,6 @@ If you want all of a type of file, run :
 ```
 snakemake --cores <nb_core_max> <file_type_name>
 ```
-It will run the correct rule taking the sample names in the [configuration file](https://gitlab.com/souliera/bill/-/wikis/Release-2024/Configuration). You can thus generate several result files for several sample files. You can find available file type names in the [wiki](https://gitlab.com/souliera/bill/-/wikis/Release-2024/Rule-details).
-
 You can override each option in the configuration file- by adding the parameter `--config <option_name>=<option_value>` to the snakemake command.
 
 ## Authors
