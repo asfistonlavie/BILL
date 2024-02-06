@@ -23,14 +23,17 @@ This pipeline starts by trimming the read files by removing reads smaller than 1
 
 ### Dependencies
 
-- snakemake v7.20.0
+- snakemake v7.21.0
 - seqkit v2.3.0
 - minimap2 v2.24-r1122
-- samtools v1.11
-- deeptools v3.5.1
-- sniffles2 v2.0.7
-- tabix v1.11
-- bcftools v1.11
+- samtools v1.16.1
+- bamCoverage v3.5.1
+- plotCoverage v3.5.1
+- sniffles2 v2.2
+- tabix v1.16
+- bgzip v1.16
+- bcftools v1.16
+- medaka v1.11.3
 
 ### How to install it
 
