@@ -2,16 +2,16 @@
 ### Required values ###
 #######################
 
-input_dir: 'ressources/inputs/P15'
-ref_dir: 'ressources/references'
+input_dir: '../ressources/inputs/P15-veli'
+ref_dir: '/data/experimentaldata/Bill/2024/references'
 ref_name: 'KHV-U_trunc.fasta'
 
 ########################
 ### Adaptable values ###
 ########################
 
-res_dir: 'results/P15-on-KHVU_trunc'
-samples: ['P15-1','P15-2','P15-3','P15-4','P15-5','P15-6','P15-7','P15-8','P15-9','P15-10']
+res_dir: '../tmp'
+samples: ['P15-1', 'P15-6']
 trim: 1000
 group: 'P15'
 

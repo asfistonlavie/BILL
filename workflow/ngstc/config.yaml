@@ -1,0 +1,69 @@
+cluster:
+  sbatch
+    --partition={resources.partition}
+    --account={resources.account}
+    --cpus-per-task={threads}
+    --mem={resources.mem_mb}
+    --job-name=smk_{rule}_{wildcards.sample}
+    --output={wildcards.path_res}/logs/{rule}_{wildcards.sample}_%j.out
+    --parsable
+default-resources:
+  - partition="sdt"
+    #{slurm.partition}
+  - account="bioinfo"
+    #{slurm.account}
+  - mem_mb=1000
+  - runtime=240
+  - constraint=""
+
+    #today=`date +"%Y%m%d%H%M"` &&
+    #--constraint={resources.constraint}
+    #--time={resources.runtime}
+    #--parsable # Required to pass job IDs to scancel or cluster-status
+restart-times: 0
+max-jobs-per-second: 10
+max-status-checks-per-second: 1
+local-cores: 1
+#latency-wait: 120
+jobs: 30
+keep-going: True
+rerun-incomplete: True
+printshellcmds: True
+scheduler: greedy
+cluster-status: status-sacct.sh
+# kill slurm jobs correctly, do not kill snakemake with 2 CTRL-C, only one
+cluster-cancel: scancel
+cluster-cancel-nargs: 50
+# containers
+use-conda: False
+# For singularity
+use-singularity: False
+  #{singularity.is_used}
+singularity-args: "-B /data -B /students"
+#singularity-prefix: "/data/containers"
+#jobscript: slurm_jobscript.sh
+
+# Defined values for our cluster
+#annotations_dir: /data/annotations
+#genomes_dir: /data/genomes
+#indexes_dir: /data/indexes
+
+# default values for slurm
+# can be overwrite by each rules
+# using the directive "resouces"
+# recources:
+#    runtime=10,
+#    mem_mb=5000,
+#    tmpdir=/scratch/tmp
+#
+# for snakemake:
+# default-resources:
+#   - runtime=10,
+#   - mem_mb=max(2*input.size_mb, 1000),
+#   - disk_mb=max(2*input.size_mb, 1000)
+#   - tmpdir=system_tmpdir # from $TMPDIR, $TEMP or $TMP
+#
+#    constraint=HMEM
+
+# Run snamake with:
+# snakemake --profile ngstc

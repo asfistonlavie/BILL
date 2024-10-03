@@ -43,29 +43,23 @@ Clone the repository wherever you want on your local:
 git clone git@gitlab.com:asfistonlavie/bill.git # by SSH 
 git clone https://gitlab.com/asfistonlavie/bill.git # by HTTPS
 ```
-Copy or move all your input data (reads and genomic references) to the `resources/` folder (respectively `resources/inputs/` and `resources/references`).
-```
-cp </path/to/your/reads/*.fastq> bill/resources/inputs/
-cp </path/to/your/reads/*.fastq.gz> bill/resources/inputs/
-cp </path/to/your/references/*.fasta> bill/resources/references/
-
-```
 
 ### How to use it
 
-There are three ways to use this pipeline: (1) by file name, (2) by file type, or (3) the whole pipeline. The main command to run all pipeline is `snakemake --cores <nb_core_max>`.
+There are two ways to run this pipeline on a cluster (i.e NGSTC): with the srun command (`srun snakemake --cores <nb_core_max> --configfile workflow/config/config.yaml [options] <target>`), or with a cluster config (`snakemake --profile workflow/ngstc --profile workflow/config/config.yaml [options] <target>`).
+
+There are three targets to use this pipeline: (1) a file name, (2) a rule name, or (3) the whole pipeline.
 
 If you just want a specific file, run:
 ```
-snakemake --cores <nb_core_max> <file_name>
+srun snakemake --cores <nb_core_max> --configfile workflow/config/config.yaml -k -p <file_name>
 ```
 It will automatically find the correct rule to run based on the file name. File names are constrained by the snakefile (see the [wiki](https://gitlab.com/souliera/bill/-/wikis/Release-2024/Rule-details) for correct file name format).
 
 If you want all of a type of file, run :
 ```
-snakemake --cores <nb_core_max> <file_type_name>
+srun snakemake --cores <nb_core_max> --configfile workflow/config/config.yaml -k -p <rule_name>
 ```
-You can override each option in the configuration file- by adding the parameter `--config <option_name>=<option_value>` to the snakemake command.
 
 ## How to cite the pipeline
 
