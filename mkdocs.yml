@@ -11,3 +11,4 @@ nav:
   - Home: index.md
   - Mapping: mapping.md
   - Variant calling: calling.md
+  - About: about.md
