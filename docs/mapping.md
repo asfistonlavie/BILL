@@ -9,9 +9,9 @@
 #### **minimap2**
 
 - Input:
-	- Fastq || fastq.gz file (trimed reads)  
+	- FASTQ || compressed FASTQ file (trimed reads)  
 &emsp;&rarr; provided by `seqkit seq` [rule](preprocessing.md#seqkit-seq)
-	- Fasta file (reference)
+	- FASTA file (reference)
 - Output:
 	- SAM file (mapping)  
 &emsp;&rarr; used by `samtools view` [rule](#samtools-view)  
@@ -90,7 +90,7 @@
 	- SAM file (mapping)  
 &emsp;&rarr; provided by `minimap2` [rule](#minimap2)
 - Output:
-	- flagstat file  
+	- TXT file (flagstat)
 - Description:  
 &emsp;Compute the mapping statistics
 

@@ -10,3 +10,4 @@ site_author: Arnaud Soulier
 nav:
   - Home: index.md
   - Mapping: mapping.md
+  - Variant calling: calling.md
