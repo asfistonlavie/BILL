@@ -1,9 +1,11 @@
-# Index.md
+# Home
  
 ## Résumé
 
+## Use
+
 ## Tool versions
 
-## COntributor
+## Contributor
 
 ## Realease

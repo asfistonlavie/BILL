@@ -3,19 +3,16 @@ theme:
   local: en
   color_mode: auto
   nav_style: primary
-  highlightjs: True
-  hljs_style: github
-  hljs_style_dark: github_dark
 
 site_name: Documentation Pipeline BILL
 repo_url: https://github.com/asfistonlavie/BILL
-repo_name: BILL
+edit_uri: edit/main/docs/
 site_description: Documentation of BILL's Pipeline
 site_author: Catherine Breton, Anna-Sophie Fiston-Lavier, Arnaud Soulier
 
 nav:
-  - Home: index.md
-  - Preprocessing: preprocessing.md
-  - Mapping: mapping.md
-  - SV calling: calling.md
-  - About: about.md
+  - Home: 'index.md'
+  - Preprocessing: 'preprocessing.md'
+  - Mapping: 'mapping.md'
+  - Variant calling: 'calling.md'
+  - About: 'about.md'
