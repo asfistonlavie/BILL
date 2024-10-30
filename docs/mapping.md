@@ -10,7 +10,7 @@
 
 - Input:
 	- Fastq || fastq.gz file (trimed reads)  
-&emsp;&rarr; provided by `seqkit seq` [rule](/preprocessing/#seqkit-seq)
+&emsp;&rarr; provided by `seqkit seq` [rule](preprocessing.md#seqkit-seq)
 	- Fasta file (reference)
 - Output:
 	- SAM file (mapping)  
@@ -47,11 +47,11 @@
 - Output:
 	- BAM file (mapped & sorted reads)  
 &emsp;&rarr; used by `samtools index` [rule](#samtools-index)  
-&emsp;&rarr; used by `medaka consensus` [rule](/calling/#medaka-consensus)  
-&emsp;&rarr; used by `sniffles` [rule](/calling/#sniffles)  
-&emsp;&rarr; used by `cuteSV` [rule](/calling/#cutesv)  
-&emsp;&rarr; used by `svim` [rule](/calling/#svim)  
-&emsp;&rarr; used by `NanoVar` [rule](/calling/#nanovar)  
+&emsp;&rarr; used by `medaka consensus` [rule](calling.md#medaka-consensus)  
+&emsp;&rarr; used by `sniffles` [rule](calling.md#sniffles)  
+&emsp;&rarr; used by `cuteSV` [rule](calling.md#cutesv)  
+&emsp;&rarr; used by `svim` [rule](calling.md#svim)  
+&emsp;&rarr; used by `NanoVar` [rule](calling.md#nanovar)  
 &emsp;&rarr; used by `bamCoverage` [rule](#bamcoverage)  
 &emsp;&rarr; used by `plotCoverage` [rule](#plotcoverage)  
 - Description:  
@@ -70,11 +70,11 @@
 &emsp;&rarr; provided by `samtools sort` [rule](#samtools-sort)
 - Output:
 	- BAI file (mapped & sorted index)  
-&emsp;&rarr; used by `medaka consensus` [rule](/calling/#medaka-consensus)  
-&emsp;&rarr; used by `sniffles` [rule](/calling/#sniffles)  
-&emsp;&rarr; used by `cuteSV` [rule](/calling/#cutesv)  
-&emsp;&rarr; used by `svim` [rule](/calling/#svim)  
-&emsp;&rarr; used by `NanoVar` [rule](/calling/#nanovar)  
+&emsp;&rarr; used by `medaka consensus` [rule](calling.md#medaka-consensus)  
+&emsp;&rarr; used by `sniffles` [rule](calling.md#sniffles)  
+&emsp;&rarr; used by `cuteSV` [rule](calling.md#cutesv)  
+&emsp;&rarr; used by `svim` [rule](calling.md#svim)  
+&emsp;&rarr; used by `NanoVar` [rule](calling.md#nanovar)  
 &emsp;&rarr; used by `bamCoverage` [rule](#bamcoverage)  
 &emsp;&rarr; used by `plotCoverage` [rule](#plotcoverage)  
 - Description:  

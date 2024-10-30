@@ -1,1 +1,4 @@
 .snakemake
+
+# mkdocs documentation
+/site
