@@ -2,18 +2,21 @@
 
 ## SNP calling
 
+#### **medaka consensus**
+
+#### **medaka snp**
+
 ## SV calling
 
-### sniffles
+#### **sniffles**
 
-### cuteSV
+#### **cuteSV**
 
-### svim
+#### **svim**
 
-### NanoVar
+#### **NanoVar**
 
 ## Statistic control
 
-### Depth & coverage
+#### **bcftools stats**
 
-### Variant statistics
