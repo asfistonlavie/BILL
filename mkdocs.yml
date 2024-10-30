@@ -8,4 +8,5 @@ site_description: Documentation for the pipeline used in BILL teaching
 site_author: Arnaud Soulier
 
 nav:
-  - index.md
+  - Home: index.md
+  - Mapping: mapping.md
