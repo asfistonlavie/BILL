@@ -1,0 +1,14 @@
+theme:
+  name: mkdocs
+
+site_name: BILL's Pipeline
+repo_url: https://github.com/asfistonlavie/BILL
+edit_uri: edit/main/docs
+site_description: Documentation for the pipeline used in BILL teaching
+site_author: Arnaud Soulier
+
+nav:
+  - Home: index.md
+  - Mapping: mapping.md
+  - Variant calling: calling.md
+  - About: about.md
