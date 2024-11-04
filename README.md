@@ -16,6 +16,7 @@ This pipeline starts by trimming the read files by removing reads smaller than 1
     - [Dependencies](#dependencies)
     - [How to install it](#install)
     - [How to use it](#how-to-use-it)
+- [Manual](https://souliera.github.io/BILL/)
 - [Authors](#authors)
 - [Acknowledgements](#acknowledgement)
 
