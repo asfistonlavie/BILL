@@ -8,7 +8,7 @@ The Bioinformatics Learning Lab (BILL) is a teaching unit of the Master of Bioin
 
 They perform DNA extraction, sequencing, data analysis and interpretation of the results. 
 
-This pipeline starts by trimming the read files by removing reads smaller than 1,000 bp. It then proceeds to align the reads against the virus genomic reference. It processes the alignment by removing unaligned reads and converting them to a sorted binary format. It then performs a variant calling step and filters the resulting variants. Finally, it merges all variant files into a _VCF_ file. Some statistical commands appear throughout the pipeline to check the quality of the data or results.
+This pipeline starts by trimming the read files by removing reads smaller than 1,000 bp. It then proceeds to align the reads against the virus genomic reference. It processes the alignment by removing unaligned reads and converting them to a sorted binary format. It then performs a variant calling step and filters the resulting variants. Some statistical commands appear throughout the pipeline to check the quality of the data or results.
 
 <img src="img/pipeline.svg" alt="Pipeline" title="Pipeline"/>
 
