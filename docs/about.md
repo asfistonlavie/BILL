@@ -26,7 +26,7 @@
 ## Publications
 
 - Variant calling pipeline designed for the Bioinformatics Learning Lab (BILL: release_2023.1).
-  Anna-Sophie Fiston-Lavier Arnaud Soulier, Alizée Arnoux, Catherine Breton, Emira Cherif, Zenodo. https://doi.org/10.5281/zenodo.10020027
+  Anna-Sophie Fiston-Lavier, Arnaud Soulier, Alizée Arnoux, Catherine Breton, Emira Cherif, Zenodo. https://doi.org/10.5281/zenodo.10020027
 
 ## Realease
 
