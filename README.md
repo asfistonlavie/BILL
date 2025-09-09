@@ -41,8 +41,8 @@ This pipeline starts by trimming the read files by removing reads smaller than 1
 Clone the repository wherever you want on your local:
 
 ```
-git clone git@gitlab.com:asfistonlavie/bill.git # by SSH 
-git clone https://gitlab.com/asfistonlavie/bill.git # by HTTPS
+git clone git@github.com:asfistonlavie/BILL.git # by SSH 
+git clone https://github.com/asfistonlavie/bill.git # by HTTPS
 ```
 
 ### How to use it
@@ -70,7 +70,7 @@ Zenodo. https://doi.org/10.5281/zenodo.10020027
 
 ## Authors
 
-- Arnaud Soulier [Github profil](https://github.com/souliera)
+- Arnaud Soulier [Gitlab profil](https://gitlab.com/souliera)
 - Catherine Breton [Github profil](https://github.com/CathyBreton)
 - Emira Cherif [Github profil](https://github.com/emiracherif)
 - Anna-Sophie Fiston-Lavier [Github profil](https://github.com/asfistonlavie)
