@@ -2,7 +2,7 @@
 ### Required values ###
 #######################
 
-input_dir: '../ressources/inputs/P15-veli'
+input_dir: '/students/PROFS/soulier/2026/INPUTS'
 ref_dir: '/data/experimentaldata/Bill/2024/references'
 ref_name: 'KHV-U_trunc.fasta'
 
@@ -10,7 +10,7 @@ ref_name: 'KHV-U_trunc.fasta'
 ### Adaptable values ###
 ########################
 
-res_dir: '../tmp'
+res_dir: '/students/PROFS/soulier/2026/RESULTS'
 samples: ['P15-1', 'P15-6']
 trim: 1000
 group: 'P15'

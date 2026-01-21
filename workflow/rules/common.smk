@@ -1,4 +1,5 @@
 def check_fastq_gz(wildcards):
+	print(f"{config['input_dir']}/{wildcards.sample}.fastq.gz")
 	if Path(f"{config['input_dir']}/{wildcards.sample}.fastq.gz").is_file():
 		return f"{config['input_dir']}/{wildcards.sample}.fastq.gz"
 	else:
