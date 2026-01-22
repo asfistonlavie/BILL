@@ -1,4 +1,4 @@
-configfile: "/students/PROFS/soulier/2026/workflow/config/config.yaml"
+configfile: "<absolute_path_to_the_workflow_directory>/config/config.yaml"
 include: "rules/common.smk"
 include: "rules/preprocessing.smk"
 include: "rules/alignment.smk"
