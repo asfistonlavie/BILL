@@ -10,7 +10,7 @@ cluster:
 default-resources:
   - partition="sdt"
     #{slurm.partition}
-  #- account="bioinfo"
+  - account="bill"
     #{slurm.account}
   - mem_mb=1000
   - runtime=240
