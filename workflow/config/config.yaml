@@ -3,7 +3,7 @@
 #######################
 
 input_dir: '<absolute_path_to_your_inputs_folder_without_last_slash>'
-ref_dir: '/data/experimentaldata/Bill/Data_2024/references'
+ref_dir: '/data/experimentaldata/Bill/BILL_data_KHVU_2024/references'
 ref_name: 'KHV-U_trunc.fasta'
 
 ########################
